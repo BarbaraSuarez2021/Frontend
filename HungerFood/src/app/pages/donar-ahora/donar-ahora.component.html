@@ -1,0 +1,25 @@
+<body class="donation-section">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>DONA AHORA !</h1>
+    <h2>Tenemos diferentes formas de donación</h2>
+    <div class="donation-buttons">
+        <div class="donation-button" [routerLink]="'/donacion-alimento'" id="DonacionAlimentos">
+            <div class="donation-content">
+                <img src="assets/images/donacion-menu-principal/donacion_alimentos.png" alt="DonacionAlimentos" >
+                <p class="hover-text">Realizar donaciones de alimentos</p>
+            </div>
+        </div>
+        <div class="donation-button" [routerLink]="'/donacion-economica'" id="DonacionEconomica">
+            <div class="donation-content" >
+                <img src="assets/images/donacion-menu-principal/Donacion_economica.png" alt="Donacion_economica">
+                <p class="hover-text">Enviar donación económica</p>
+            </div>
+        </div>
+        <div class="donation-button"  [routerLink]="'/alianzas'" id="Alianzas">
+            <div class="donation-content">
+                <img  src="assets/images/donacion-menu-principal/Alianzas.png" alt="Alianzas">
+                <p class="hover-text">Alianzas</p>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,40 @@
+
+.banner{
+    background-image: url('../../../assets/images/inicio/img-inicio.jpg');
+    background-position: center top;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.content{
+    position:absolute;
+}
+
+.content h1{ 
+    color: #ffffff;
+    font-size: 5vw;
+    font-family: 'Jost', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+.content a{
+    text-decoration: none;
+    background-color: #FFF;
+    color: var(--primary-color);
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.content a:hover{
+    background-color: var(--primary-color);
+    color: var(--third-color);
+}
+
+
+
