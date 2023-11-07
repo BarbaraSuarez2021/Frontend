@@ -1,0 +1,50 @@
+body {
+  background-color: #979292;
+  height: 100%;
+  max-width: none;
+}
+
+div {
+  margin: auto;
+  flex: 1;
+  height: 91vh;
+}
+
+#btn1 {
+  text-size-adjust: initial;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  font-size: 30px;
+  color: #2e965e;
+  background-color: #d9d9d9;
+}
+
+.containerr {
+  background-color: #a9cec2e2;
+  border-radius: 90px;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.parte2 {
+  background-color: #979292;
+  text-align: center;
+  font-family: "Spartan";
+  color: #ffffff;
+  height: 31vh;
+}
+
+label {
+  text-size-adjust: initial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60%;
+  font-size: 18px;
+}
+
+/*#979292*/

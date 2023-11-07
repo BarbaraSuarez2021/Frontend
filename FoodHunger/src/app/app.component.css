@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.tol{
+    background-color: #5f5c6d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+}
+
+.logo img {
+  width: 280px;
+  height: 55px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.icono_usuario_verde img {
+  width: 38px;
+  margin-right: 10px;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  font-size: 15px;
+}
+
+.nav-button {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 45px;
+  transition: color 0.01;
+  font-family: "Spartan";
+  font-weight: bold;
+}
+.nav-button:hover {
+  color: #2e965e;
+}
+
+.nav-button:focus {
+  outline: none;
+}
+
+.button-usuario {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.button-logo {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}

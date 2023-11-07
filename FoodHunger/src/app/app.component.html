@@ -1,1 +1,30 @@
-<p>Mi Trabajo</p> 
+<mat-toolbar class ="tol" >
+
+  <div class="logo">
+    <button class="button-logo">
+        <img src="/assets/LogoHunger.png" alt="Logo de Logo de Hunger">
+    </button>
+  </div>
+  <div class="nav-buttons">
+    <button class="nav-button">INICIO</button>
+    <button class="nav-button" mat-button [matMenuTriggerFor]="menuAdministrador" >REPORTES</button>
+  </div>
+    
+    <div class="icono_usuario_verde">
+      <button class="button-usuario">
+          <img src="/assets/user_verde.png" alt="icono_usuario_verde">
+      </button>
+  </div>
+
+
+</mat-toolbar>
+
+<mat-menu #menuAdministrador="matMenu">
+  <button mat-menu-item routerLink="/administrador/reporte">Reporte</button>
+  <button mat-menu-item routerLink="/administrador">Home</button>
+  <button mat-menu-item routerLink="/administrador/admin">C</button>
+
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<router-outlet></router-outlet><app-administrador></app-administrador>
