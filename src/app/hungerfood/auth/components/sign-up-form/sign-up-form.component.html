@@ -1,0 +1,145 @@
+<div class="form-container mat-elevation-z5">
+  <h1>Sign Up!</h1>
+  <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+    <mat-form-field>
+      <input matInput placeholder="Name" formControlName="nombreU" [(ngModel)]="user.nombreU" />
+      <mat-error *ngIf="nombreU?.errors?.['required']">
+        Name is required
+      </mat-error>
+      <mat-error *ngIf="nombreU?.errors?.['pattern']">
+        Please enter a correct name format
+      </mat-error>
+      <mat-error *ngIf="nombreU?.errors?.['minlength']">
+        Name should be at least 2 characters long
+      </mat-error>
+      <mat-error *ngIf="nombreU?.errors?.['maxlength']">
+        Name should be at most 25 characters long
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Lastname" formControlName="apelidoU" [(ngModel)]="user.apelidoU"/>
+      <mat-error *ngIf="apelidoU?.errors?.['required']">
+        Lastname is required
+      </mat-error>
+      <mat-error *ngIf="apelidoU?.errors?.['pattern']">
+        Please enter a correct lastname format
+      </mat-error>
+      <mat-error *ngIf="apelidoU?.errors?.['minlength']">
+        Lastname should be at least 2 characters long
+      </mat-error>
+      <mat-error *ngIf="apelidoU?.errors?.['maxlength']">
+        Lastname should be at most 25 characters long
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Username" formControlName="usernameU" [(ngModel)]="user.usernameU" />
+      <mat-error *ngIf="usernameU?.errors?.['required']">
+        Username is required
+      </mat-error>
+      <mat-error *ngIf="usernameU?.errors?.['pattern']">
+        Please enter a correct username format
+      </mat-error>
+      <mat-error *ngIf="usernameU?.errors?.['minlength']">
+        Username should be at least 2 characters long
+      </mat-error>
+      <mat-error *ngIf="usernameU?.errors?.['maxlength']">
+        Username should be at most 25 characters long
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Donation" formControlName="donacionU" [(ngModel)]="user.donacionU" />
+      <mat-error *ngIf="donacionU?.errors?.['required']">
+        Donation is required
+      </mat-error>
+      <mat-error *ngIf="donacionU?.errors?.['pattern']">
+        Please enter a correct donation format
+      </mat-error>
+      <mat-error *ngIf="donacionU?.errors?.['minlength']">
+        Donation should be at least 2 characters long
+      </mat-error>
+      <mat-error *ngIf="donacionU?.errors?.['maxlength']">
+        Donation should be at most 25 characters long
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Password"
+        formControlName="contrasena"
+        type="password"
+        [(ngModel)]="user.contrasena"
+      />
+      <mat-error *ngIf="contrasena?.errors?.['required']">
+        Password is required
+      </mat-error>
+      <mat-error *ngIf="contrasena?.errors?.['pattern']">
+        Please enter a correct password format
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Confirm Password"
+        formControlName="confirmPassword"
+        type="password"
+      />
+      <mat-error *ngIf="confirmPassword?.errors?.['required']">
+        Confirm Password is required
+      </mat-error>
+      <mat-error *ngIf="confirmPassword?.errors?.['pattern']">
+        Please enter a correct password format
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Rol ID" formControlName="idRoles" [(ngModel)]="user.idRoles" />
+      <mat-error *ngIf="idRoles?.errors?.['required']">
+        Id de tipo de rol is required
+      </mat-error>
+      <mat-error *ngIf="idRoles?.errors?.['pattern']">
+        Please enter a correct rol Id format
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Tipo de donacion ID" formControlName="idTipoDonacion" [(ngModel)]="user.idTipoDonacion" />
+      <mat-error *ngIf="idTipoDonacion?.errors?.['required']">
+        Id de tipo de donacion is required
+      </mat-error>
+      <mat-error *ngIf="idTipoDonacion?.errors?.['pattern']">
+        Please enter a correct tipo de donacion Id format
+      </mat-error>
+    </mat-form-field>
+
+    <mat-error *ngIf="signUpForm.errors?.['passwordsDontMatch']">
+      Passwords should match
+    </mat-error>
+
+    <div class="center margin-top">
+      <button
+        mat-raised-button
+        color="primary"
+        style="background-color: #647771; color: white"
+        [disabled]="!signUpForm.valid "
+        class="button-sign-up"
+        type="submit"
+      >
+        Sign Up!
+      </button>
+    </div>
+    <div class="center margin-top">
+      <button
+        mat-raised-button
+        color="primary"
+        style="background-color: #647771; color: white"
+        class="button-sign-up"
+        type="submit"
+        (click)="cancel()"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

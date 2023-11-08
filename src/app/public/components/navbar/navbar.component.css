@@ -1,0 +1,62 @@
+/* Estilos generales */
+.mat-toolbar {
+  background-color: #5F5C6D;
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Logo */
+img {
+  height: 50px;
+  width: 120px;
+}
+
+/* Menú de navegación en dispositivos móviles */
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Enlaces de navegación */
+a.mat-button {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* Botón de inicio de sesión */
+.sign-in-account-button {
+  background-color: #6b7d78;
+  font-weight: bold;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+}
+
+/* Media queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .mat-toolbar {
+    flex-direction: column;
+    height: auto;
+  }
+
+  a.mat-button {
+    margin: 10px 0;
+  }
+
+  /* Mostrar el botón de menú en dispositivos móviles */
+  .mobile-menu {
+    display: block;
+  }
+
+  /* Ocultar los enlaces de navegación en dispositivos móviles */
+  a.mat-button {
+    display: none;
+  }
+}

@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <img src="assets/LogoHunger.jpg" alt="Logo" height="50px" width="120px" />
+  <span class="mat-spacer"></span>
+  <a mat-button [routerLink]="''">Home</a>
+  <a mat-button [routerLink]="'/about'">About</a>
+  <a mat-button [routerLink]="'/donations'">Donations</a>
+
+  <button
+    mat-raised-button
+    class="sign-in-account-button"
+    [routerLink]="'/auth/sign-in'"
+    [color]="'#c3e4da'"
+  >
+      <mat-icon>account_circle</mat-icon>
+      Sign In
+  </button>
+
+</mat-toolbar>

@@ -1,0 +1,28 @@
+<div class="class-container">
+  <div class="container-title">
+    <h1 class="title">CON NOSOTROS PUEDES DONAR</h1>
+    <h3>de tres distintas formas</h3>
+  </div>
+  <mat-grid-list cols="3" rowHeight="200px">
+    <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color"
+    >
+      <mat-card class="card">
+        <img
+          mat-card-image
+          src="{{ tile.image }}"
+          alt="{{ tile.text }}"
+        />
+        <mat-card-content>
+          <p>
+            <strong>{{ tile.text }}</strong>
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <button mat-raised-button class="create-account-button" [routerLink]="'/auth/sign-up'">Crear Cuenta</button>
+</div>

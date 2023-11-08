@@ -1,0 +1,19 @@
+.sign-in-view {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../../../../assets/fondo-realizardonacion.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 20px; /* Aumentamos el padding para separar el contenido del borde */
+}
+
+app-sign-in-form {
+  max-width: 400px; /* Limitamos el ancho del formulario para que no ocupe toda la pantalla */
+  background-color: rgba(255, 255, 255, 0.8); /* Agregamos un fondo semitransparente al formulario */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}

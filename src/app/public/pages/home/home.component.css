@@ -1,0 +1,93 @@
+/* Estilos generales */
+.class-container {
+  background-color: #838383;
+  font-family: 'Inter';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Primera sección */
+.seccion1 {
+  background-color: #A9CEC2;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+/* Segunda sección */
+.seccion2 {
+  background-color: #838383;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Botón "Crear Cuenta" */
+.create-account-button {
+  background-color: #92b9ad;
+  color: #fff;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 30px;
+  transition: background-color 0.2s;
+  margin: 20px 20px;
+}
+
+.create-account-button:hover {
+  background-color: #92b9ad;
+}
+
+/* Párrafo de información */
+.parrafo {
+  text-align: justify;
+  align-items: center;
+  color: #FFFFFF;
+  font-size: 25px;
+  display: flex;
+  max-width: 90%;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+/* Sección del medio */
+.seccion-medio {
+  background: #D9D9D9;
+  border-radius: 40px;
+  margin: 20px;
+  text-align: center;
+  padding: 20px;
+  color: #2E965E;
+  font-size: 36px;
+}
+
+/* Media queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .seccion1 {
+    height: auto;
+    width: auto;
+  }
+
+  .seccion1 img {
+    width: 100%;
+  }
+
+  .seccion2 {
+    height: auto;
+  }
+
+  .create-account-button {
+    position: static;
+  }
+
+  .seccion-medio {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}

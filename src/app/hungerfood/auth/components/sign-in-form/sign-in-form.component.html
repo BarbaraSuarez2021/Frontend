@@ -1,0 +1,27 @@
+<div class="form-container mat-elevation-z5">
+  <h1>Login</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <mat-form-field>
+      <input matInput placeholder="Username" formControlName="username" />
+      <mat-error *ngIf="username?.hasError('required')">
+        Username is required
+      </mat-error>
+      <mat-error *ngIf="username?.hasError('pattern')">
+        Please enter a correct username format
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Password" formControlName="password" type="password" />
+      <mat-error *ngIf="password?.hasError('required')">
+        Password is required
+      </mat-error>
+    </mat-form-field>
+    <div class="center margin-top">
+      <button mat-raised-button color="primary" class="button-sign-in" type="submit" style="background-color: #647771; color: white;" [disabled]="!loginForm.valid">Login</button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="center margin-top">
+      <span class="sign-up-link">New to our platform? <a routerLink="/auth/sign-up">Sign Up!</a></span>
+    </div>
+  </form>
+</div>
