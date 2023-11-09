@@ -1,0 +1,70 @@
+.donationEconomica-section{
+    background-image: url('../../../assets/images/donacione-economica/img-d.jpg');
+    background-position: center top;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+.donationEconomica-section h1{
+    color: #FFFFFF;
+    background-color: #2E965E;
+    font-size: 6vw;
+    padding: 2%;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+  
+}
+.fechaRetroceso img{
+    background-color: none;
+    filter: invert(1);
+    position: absolute;
+    top: 0; 
+    left: 0;
+    margin: 15px;
+}
+.fechaRetroceso:hover img { 
+    filter: invert(1);
+}
+.registroEconomico{
+    padding-left: 2%;
+}
+
+.formularioEconomico mat-form-field {
+    display: block; 
+    margin-bottom: 1mm; /**/
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+}
+
+.btnRegistrarDonacion {
+    background-color: #FFFFFF; 
+    color: #2E965E; 
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btnRegistrarDonacion:hover {
+    background-color: #2E965E; 
+    color: #FFFFFF; 
+} 
+.mensaje_Formulario{
+    background-color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+    .donationEconomica-section h1 {
+        font-size: 4vw;
+    }
+    .registroEconomico {
+        padding-left: 5%;
+    }
+}

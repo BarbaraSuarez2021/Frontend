@@ -1,0 +1,163 @@
+body {
+    background-color: #A9CEC2;
+    margin: 0;
+    padding: 0; 
+    height: 10%;
+}
+.registroAlimento{
+    background-color: #E6D72A;
+    position: relative;
+    margin: auto;
+    margin-top: 40px;
+    max-width: 1000px;
+    max-height: 545px;
+    overflow: hidden;
+    border-radius: 1em;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-gap: 0; 
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+}
+.formularioAlimentos {
+    align-items: center;
+    margin: 0.5cm;
+    background-color: #E6D72A;
+    border: 20px solid #E6D72A; 
+}
+.imagen_formulario {
+    padding: 0;
+    margin: 0; 
+    width: 210%; 
+}
+
+.formularioAlimentos mat-form-field {
+    display: block; 
+    margin-bottom: 10px;
+}
+
+  
+.donationAlimento-section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-size: 100%;
+    height: 100%; 
+}
+
+.donationAlimento-section h1 {
+    color: black;
+    font-size: 64px;
+    font-family: Spartan;
+    font-weight: 700;
+    word-wrap: break-word;
+    text-align: center;
+    margin: 15px;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+}
+
+.btnRegistrarAlimento {
+    background-color: #FFFFFF; 
+    color: #2E965E; 
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btnRegistrarAlimento:hover {
+    background-color: #2E965E; 
+    color: #FFFFFF; 
+} 
+
+.formularioAlimentos mat-label {
+    color: rgba(0, 0, 0, 0.3);
+    font-style: normal;
+    line-height: normal;
+}
+
+.fechaRetroceso:hover img { 
+    filter: invert(1);
+}
+.mensaje_error_nombreAlimento {
+    position: absolute; 
+    top: 312px; 
+    color: red; 
+    font-size: 14px; 
+    padding: 5px;
+}
+
+.mensaje_error_fechaV {
+    position: relative;
+    font-size: 14px;
+    color: red;
+    padding: 0px;
+    white-space: nowrap; 
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 553px) {
+
+    .donationAlimento-section h1 {
+        max-width: 100%; 
+        line-height: 1.2; 
+        word-break: break-word;
+        font-size: 40px;
+    }
+    .registroAlimento {
+      max-width: 100%; 
+    }
+    .mat-form-field {
+      width: 100%; 
+    }
+    
+    .fechaRetroceso img {
+        width: 40px; 
+        height: auto; 
+    }
+
+}
+
+/*PANTALLAS MEDIANAS*/
+@media screen and (max-width: 1200px) {
+    .donationAlimento-section h1 {
+        max-width: 100%; 
+        line-height: 1.2; 
+        word-break: break-word;
+    }
+    .registroAlimento {
+        margin: 0;
+    }
+}
+
+/* Para pantallas pequeñas */
+@media screen and (max-width: 955px) {
+    .registroAlimento {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Centra verticalmente en la pantalla */
+        max-width: 400px;
+        max-height: 550px;
+        margin: 0 auto; /* Centra horizontalmente en la pantalla */
+        background-color: #E6D72A;
+        border: 20px solid #E6D72A;
+    }
+      
+    
+    .imagen_formulario {
+      display: none;
+    }
+
+    .formularioAlimentos mat-form-field {
+        width: 8cm;
+        max-width: 10cm;
+    }
+  }
+  
+
+/****/

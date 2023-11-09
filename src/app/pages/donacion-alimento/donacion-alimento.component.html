@@ -1,0 +1,66 @@
+<link href='https://fonts.googleapis.com/css?family=Spartan' rel='stylesheet'>
+<body class="donationAlimento-section">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <a class="fechaRetroceso" href="/donar-ahora">
+        <img src="/assets/images/donacion-alimento/fecha_detras.png" alt="Fecha de Retroceso" style="float: left;">
+      </a>    
+      <h1>Donación de Alimento</h1>
+        <div class="registroAlimento">
+          <div class="imagen_formulario">
+            <img src="/assets/images/donacion-alimento/fondo_donacion_formulario.png" alt="Fecha de Retroceso" class="imgFormulario">
+          </div>
+          <div class="formularioAlimentos">
+            <form [formGroup]="myForm" (ngSubmit)="addTipoAlimento()">
+              <mat-datepicker #pickerFechaEmision></mat-datepicker>
+              <mat-datepicker #pickerFechaVencimiento></mat-datepicker>
+              <mat-form-field>
+                <mat-label>Nombre Alimento</mat-label>
+                <input matInput formControlName="nombreAlimentos">
+              </mat-form-field>
+              <div *ngIf="myForm.get('nombreAlimentos')?.dirty && myForm.get('nombreAlimentos')?.hasError('numerosIngresados')" class="mensaje_error_nombreAlimento">
+                <span class="mensaje_Formulario">
+                  No se permiten números en el campo.
+                </span>
+              </div>
+              <mat-form-field>
+                <mat-label>  Descripción Específica </mat-label>
+                <input matInput formControlName="descripcionEspecifica">
+              </mat-form-field>
+    
+              <mat-form-field>
+                <mat-label>Fecha de Emision</mat-label>
+                <input matInput [matDatepicker]="pickerFechaEmision" formControlName="fechaEmision">
+                <mat-hint>DD/MM/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="pickerFechaEmision"></mat-datepicker-toggle>
+                <mat-datepicker #pickerFechaEmision></mat-datepicker>
+              </mat-form-field>
+              
+    
+              <mat-form-field>
+                <mat-label>Fecha de Vencimiento</mat-label>
+                <input matInput [matDatepicker]="pickerFechaVencimiento" formControlName="fechaVencimiento">
+                <mat-hint>DD//YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="pickerFechaVencimiento"></mat-datepicker-toggle>
+                <mat-datepicker #pickerFechaVencimiento></mat-datepicker>
+              </mat-form-field>
+              <div *ngIf="myForm.get('fechaVencimiento')?.dirty && myForm.get('fechaVencimiento')?.hasError('numerosOnly')" class="mensaje_error_fechaV">
+                <span class="mensaje_Formulario">
+                  No se permiten letras en el campo de Fecha de Vencimiento.
+                </span>
+              </div> 
+              
+              <mat-form-field>
+                <mat-label>Tipo de Alimento</mat-label>
+                <mat-select formControlName="tipoAlimento">
+                  <mat-option value="one">1</mat-option>
+                  <mat-option value="two">2</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div class="button-container">
+                <button mat-raised-button class="btnRegistrarAlimento" type="submit" [disabled]="myForm.invalid">Registrar Alimento</button>
+              </div>
+            </form>
+          </div>
+        </div>
+  </body>
+  

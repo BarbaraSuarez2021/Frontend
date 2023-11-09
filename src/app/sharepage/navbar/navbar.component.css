@@ -1,0 +1,51 @@
+.navbar-light .navbar-nav .nav-link{
+    color: var(--third-color);
+}
+
+.navbar-light .navbar-nav .nav-link.active-link{
+    color: var(--primary-color);
+}
+.nav-link {
+    background: transparent;
+    font-size: 18px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    align-items: center;
+    transition: color 0.5s;
+    font-family: "Spartan";
+    font-weight: bold;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.nav-link:hover {
+    color: #2E965E;
+    transition: color 0.3s;
+}
+.nav-link:focus {
+    outline: none;
+}
+.logo{
+    width: 285px; 
+    height: 60px;
+    padding-top: 5px;
+    padding-left: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.icono{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.navbar-toggler{
+    filter: invert(120%); 
+}
+.navbar-nav.ms-auto {
+    align-items: center;
+}
