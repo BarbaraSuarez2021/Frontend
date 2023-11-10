@@ -30,11 +30,11 @@ export class DonacionAlimentoComponent implements OnInit {
     const fechaHoy = new Date();
 
     this.myForm = this.fb.group({
-      nombreAlimentos: ['', [Validators.required, this.letrasOnlyValidator]],
-      descripcionEspecifica: ['', Validators.required],
+      nombre_alimento: ['', [Validators.required, this.letrasOnlyValidator]],
+      descripcion_especifico: ['', Validators.required],
       fechaEmision: [fechaHoy, Validators.required], 
       fechaVencimiento: ['', [Validators.required, this.numerosOnlyValidator]],
-      tipoAlimento: ['', Validators.required]
+      id_TipoAlimento: ['', Validators.required]
     });
   }
 
@@ -73,12 +73,12 @@ export class DonacionAlimentoComponent implements OnInit {
       const fechaEmisionFormateada = `${dayE < 10 ? '0' : ''}${dayE}-${monthE < 10 ? '0' : ''}${monthE}-${yearE}`;
       
       const tipoAlimentos: Donacion_Alimento = {
-        id: 0,
-        nombreAlimentos: this.myForm.get('nombreAlimentos')!.value,
-        descripcionEspecifica: this.myForm.get('descripcionEspecifica')!.value,
+        idAlimentos_Donados: 0,
+        nombre_alimento: this.myForm.get('nombre_alimento')!.value,
+        descripcion_especifico: this.myForm.get('descripcion_especifico')!.value,
         fechaEmision: fechaEmisionFormateada as any,
         fechaVencimiento: fechaVencimientoFormateada as any, 
-        tipoAlimento: this.myForm.get('tipoAlimento')!.value
+        id_TipoAlimento: this.myForm.get('id_TipoAlimento')!.value
     };
 
     this.registroDonacionAlimentos.saveDonacion_Alimento(tipoAlimentos).subscribe({

@@ -1,8 +1,8 @@
 export interface Donacion_Alimento {
-    id:number,
-    nombreAlimentos:string;
-    descripcionEspecifica:string;
+    idAlimentos_Donados:number,
+    nombre_alimento:string;
+    descripcion_especifico:string;
     fechaEmision:Date;
     fechaVencimiento:Date;
-    tipoAlimento:number;
+    id_TipoAlimento:number;
 }

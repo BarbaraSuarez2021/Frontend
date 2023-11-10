@@ -15,16 +15,16 @@
               <mat-datepicker #pickerFechaVencimiento></mat-datepicker>
               <mat-form-field>
                 <mat-label>Nombre Alimento</mat-label>
-                <input matInput formControlName="nombreAlimentos">
+                <input matInput formControlName="nombre_alimento">
               </mat-form-field>
-              <div *ngIf="myForm.get('nombreAlimentos')?.dirty && myForm.get('nombreAlimentos')?.hasError('numerosIngresados')" class="mensaje_error_nombreAlimento">
+              <div *ngIf="myForm.get('nombre_alimento')?.dirty && myForm.get('nombre_alimento')?.hasError('numerosIngresados')" class="mensaje_error_nombreAlimento">
                 <span class="mensaje_Formulario">
                   No se permiten números en el campo.
                 </span>
               </div>
               <mat-form-field>
                 <mat-label>  Descripción Específica </mat-label>
-                <input matInput formControlName="descripcionEspecifica">
+                <input matInput formControlName="descripcion_especifico">
               </mat-form-field>
     
               <mat-form-field>
@@ -39,7 +39,7 @@
               <mat-form-field>
                 <mat-label>Fecha de Vencimiento</mat-label>
                 <input matInput [matDatepicker]="pickerFechaVencimiento" formControlName="fechaVencimiento">
-                <mat-hint>DD//YYYY</mat-hint>
+                <mat-hint>DD/MM/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="pickerFechaVencimiento"></mat-datepicker-toggle>
                 <mat-datepicker #pickerFechaVencimiento></mat-datepicker>
               </mat-form-field>
@@ -51,11 +51,23 @@
               
               <mat-form-field>
                 <mat-label>Tipo de Alimento</mat-label>
-                <mat-select formControlName="tipoAlimento">
-                  <mat-option value="one">1</mat-option>
-                  <mat-option value="two">2</mat-option>
+                <mat-select formControlName="id_TipoAlimento">
+                  <mat-option value= 1>Frutas</mat-option>
+                  <mat-option value= 2>Vegetales</mat-option>
+                  <mat-option value= 3>Carnes</mat-option>
+                  <mat-option value= 4 >Productos Marinos</mat-option>
+                  <mat-option value= 5 >Productos Lácteos</mat-option>
+                  <mat-option value= 6 >Cereales y Granos</mat-option>
+                  <mat-option value= 7 >Legumbres</mat-option>
+                  <mat-option value= 8 >Frutos Secos</mat-option>
+                  <mat-option value= 9 >Dulces</mat-option>
+                  <mat-option value= 10 >Bebidas embotelladas</mat-option>
+                  <mat-option value= 11 >Alimentos para Bebés</mat-option>
+                  <mat-option value= 12 >Comida enlatada</mat-option>
                 </mat-select>
               </mat-form-field>
+              
+
               <div class="button-container">
                 <button mat-raised-button class="btnRegistrarAlimento" type="submit" [disabled]="myForm.invalid">Registrar Alimento</button>
               </div>
