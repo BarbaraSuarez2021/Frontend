@@ -94,7 +94,13 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Rol ID" formControlName="idRoles" [(ngModel)]="user.idRoles" />
+      <mat-label>Rol</mat-label>
+      <mat-select formControlName="idRoles">
+        <mat-option [value]="null">Seleccionar Rol</mat-option>
+        <mat-option *ngFor="let rol of roles" [value]="rol.idRoles">
+          {{ rol.tipo }}
+        </mat-option>
+      </mat-select>
       <mat-error *ngIf="idRoles?.errors?.['required']">
         Id de tipo de rol is required
       </mat-error>
@@ -103,8 +109,16 @@
       </mat-error>
     </mat-form-field>
 
+
+
     <mat-form-field>
-      <input matInput placeholder="Tipo de donacion ID" formControlName="idTipoDonacion" [(ngModel)]="user.idTipoDonacion" />
+      <mat-label>Tipo de Donación</mat-label>
+      <mat-select formControlName="idTipoDonacion">
+        <mat-option [value]="null">Seleccionar Tipo de Donación</mat-option>
+        <mat-option *ngFor="let tipoDonacion of tiposDonacion" [value]="tipoDonacion.idTipoDonacion">
+          {{ tipoDonacion.nombreTD }}
+        </mat-option>
+      </mat-select>
       <mat-error *ngIf="idTipoDonacion?.errors?.['required']">
         Id de tipo de donacion is required
       </mat-error>

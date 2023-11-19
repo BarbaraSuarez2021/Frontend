@@ -1,0 +1,16 @@
+<mat-toolbar color="accent" class="menu-toolbar">
+    <mat-toolbar-row>
+      <img class="hungerimg" src="assets/LogoHunger 1.png" alt="Logo" width="328" height="76"  >
+      <span class="example-spacer"></span>
+      <a class="nav-link" [routerLink]="'/admin/listaFecha'">ListaFecha</a>
+      <a class="nav-link" [routerLink]="'/admin/listUsuario'">ListaUsuario</a>
+      <a class="nav-link" [routerLink]="'/admin/administrador'">
+        <mat-icon class="menu-icon">account_circle</mat-icon>
+      </a>
+      <button mat-raised-button [routerLink]="'/home'" (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        Log Out
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+

@@ -1,3 +1,7 @@
+body {
+  background-color: #838383;
+}
+
 /* Estilos generales */
 .class-container {
   background-color: #838383;
@@ -9,6 +13,7 @@
 
 /* Primera sección */
 .seccion1 {
+  margin-top: 0.5cm;
   background-color: #A9CEC2;
   border-radius: 20px;
   display: flex;
@@ -26,7 +31,7 @@
   align-items: center;
   text-align: center;
   flex-direction: column;
-  padding: 20px;
+  padding: 12px;
 }
 
 /* Botón "Crear Cuenta" */
@@ -38,6 +43,7 @@
   border-radius: 30px;
   transition: background-color 0.2s;
   margin: 20px 20px;
+  margin-top: 2px;
 }
 
 .create-account-button:hover {
@@ -53,7 +59,7 @@
   display: flex;
   max-width: 90%;
   line-height: 1.5;
-  padding: 20px;
+  padding: 1px;
 }
 
 /* Sección del medio */
@@ -65,6 +71,10 @@
   padding: 20px;
   color: #2E965E;
   font-size: 36px;
+}
+
+.seccion-medio h2 {
+margin: 0;
 }
 
 /* Media queries para dispositivos móviles */

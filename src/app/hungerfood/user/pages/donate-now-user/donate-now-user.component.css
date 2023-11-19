@@ -1,0 +1,125 @@
+body {
+  background-color: #A9CEC2;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.donation-section {
+  text-align: center;
+  background-color: #A9CEC2;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 15px;
+  padding-left: 15px;
+  height: auto;
+}
+
+.donation-section h1 {
+  color: #000;
+  font-family: Spartan;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  padding-top: 30px;
+}
+
+.donation-section h2 {
+  color: #000;
+  font-family: Spartan;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.donation-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+
+}
+
+.donation-button {
+  background-color: #FFFFFF;
+  width: 300px;
+  height: 320px;
+  padding: 35px;
+  margin: 0 50px;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: background-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Spartan;
+  font-size: 24px;
+  font-weight: 700;
+  box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.donation-button:hover {
+  background-color: #1E6A42;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 30px -15px rgba(0,0,0,0.5);
+  z-index: 1;
+  color: #FFFFFF;
+}
+
+.donation-button img {
+  padding:30px;
+  width: 128px;
+  height: 128px;
+}
+
+.donation-button:hover img {
+  filter: invert(1);
+}
+
+
+/* Pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .donation-buttons {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px 0;
+  }
+
+  .donation-button {
+      margin: 10px 0;
+      width: calc(240px); /* Reducir el ancho en un 20% */
+      height: calc(256px);
+  }
+}
+
+/*PANTALLAS MEDIANAS*/
+@media screen and (max-width: 1172px) {
+
+  .donation-section {
+      flex-direction: column;
+  }
+
+  .donation-buttons {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+  }
+
+  .donation-button {
+      margin: 10px 0;
+      width: calc(240px);
+      height: calc(256px);
+  }
+}
+
+.hover-text {
+  line-height: 1.5;
+}
+/****/

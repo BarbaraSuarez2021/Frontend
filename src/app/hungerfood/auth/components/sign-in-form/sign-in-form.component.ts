@@ -1,11 +1,11 @@
-import { User } from './../../model/user/user';
-import { LoginService } from './../../services/login-service/login.service';
+import { User } from '../../model/user/user';
+import { LoginService } from '../../services/login-service/login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { UserService } from '../../services/user-service/user.service';
-
+import {AuthServiceService} from "../../services/auth-service/auth-service.service";
 
 @Component({
   selector: 'app-sign-in-form',
@@ -18,14 +18,18 @@ export class SignInFormComponent implements OnInit {
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
   });
 
-  user: User = new User(0, 0, 0, '', '', '', '', '',);
+  user: User;
+  static token: any;
 
   constructor(
     private router: Router,
     private toast: HotToastService,
     private loginService: LoginService,
-    private userService: UserService
-  ) { }
+    private userService: UserService,
+    private authService: AuthServiceService
+  ) {
+    this.user = {} as User;
+  }
 
   ngOnInit(): void { }
 
@@ -42,7 +46,7 @@ export class SignInFormComponent implements OnInit {
     if (username) {
       return this.userService.getByUsername(username);
     }
-    return null; // O manejar de otra forma si no tienes un valor de username
+    return null;
   }
 
   submit() {
@@ -55,10 +59,17 @@ export class SignInFormComponent implements OnInit {
         this.loginService.login(username, password).subscribe(
           (authResponse) => {
             // Manejar la respuesta del servidor de autenticación
-            if (this.userByUsername) {
-              this.userByUsername.subscribe((user) => {
+            this.userService.getByUsername(username).subscribe(
+              (user) => {
                 this.user = user;
                 console.log(this.user);
+                SignInFormComponent.token = authResponse.token;
+
+                localStorage.setItem('currentUser', JSON.stringify(this.user));
+                localStorage.setItem('authToken', authResponse.token);
+
+                this.authService.setAuthToken(authResponse.token);
+                console.log(authResponse.token);
                 this.toast.success('Login successfully');
 
                 if (this.user.idRoles == 1) {
@@ -66,11 +77,14 @@ export class SignInFormComponent implements OnInit {
                 } else if (this.user.idRoles == 2) {
                   this.router.navigate(['/user/home']);
                 }
-              });
-            }
+              },
+              (error) => {
+                console.error(error);
+              }
+            );
           },
           (error) => {
-            // Manejar errores de autenticación, por ejemplo, mostrar un mensaje de error
+
             this.toast.error('Authentication failed. Please check your credentials.');
             console.error(error);
           }
@@ -78,7 +92,6 @@ export class SignInFormComponent implements OnInit {
       }
     }
   }
-
 
 
 }

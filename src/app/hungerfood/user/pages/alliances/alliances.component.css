@@ -1,0 +1,87 @@
+body {
+  background-color: #A9CEC2;
+  height: 100vh;
+}
+
+.TituloAlianza {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 28vh;
+  position: relative;
+}
+p {
+  color: #000;
+  font-family: Spartan;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+.fechaRetroceso {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.fechaRetroceso img {
+  float: left;
+  margin-top: 15PX;
+  margin-left:  15px;
+}
+
+.fechaRetroceso:hover img {
+  filter: invert(1);
+}
+
+.ImagenesAlianzas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 50px;
+  grid-column-gap: 1mm;
+  padding: 5px;
+}
+
+.logoAlianza {
+  text-align: center;
+}
+
+.logoAlianza img {
+  max-width: 100%;
+  height: auto;
+  max-height: 190px;
+}
+
+.logoAlianza img:hover {
+  transform: scale(1.1);
+  transition: background-color 0.3s;
+}
+
+@media (max-width: 360px) {
+  .fechaRetroceso img {
+      width: 40px;
+      height: auto;
+  }
+
+}
+@media screen and (max-width: 768px) {
+
+  .TituloAlianza p {
+      font-size: 50px;
+  }
+
+  .fechaRetroceso img {
+      width: 40px;
+      height: auto;
+      margin-bottom: 10px;
+  }
+
+  .ImagenesAlianzas {
+      grid-template-columns: 1fr;
+      margin: 8px;
+  }
+}

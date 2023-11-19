@@ -1,1 +1,11 @@
-<p>home-user works!</p>
+<app-navbar-user></app-navbar-user>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@100&family=Montserrat:wght@100&display=swap" rel="stylesheet">
+<div class="banner">
+    <div class="content">
+        <h1 class="mb-5"> Bienvenido <br> {{user.nombreU}} {{user.apelidoU}} </h1>
+        <a routerLink="/user/donate-now">Puedes realizar donaciones </a>
+    </div>
+</div>
+

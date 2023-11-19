@@ -3,6 +3,7 @@ import {catchError, Observable, retry, throwError} from "rxjs";
 import {User} from "../../model/user/user";
 import {environment} from "../../../../../environments/environment";
 import { Injectable } from '@angular/core';
+import {AuthServiceService} from "../auth-service/auth-service.service";
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +13,14 @@ export class UserService {
   basePath: string = `${environment.serverBasePath}`;
   resourceEndpoint: string;
 
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   }
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private authService: AuthServiceService) {
       this.resourceEndpoint = 'api/auth/Usuario';
    }
 
@@ -38,10 +40,18 @@ export class UserService {
     return `${this.basePath}${this.resourceEndpoint}`;
   }
 
+  private getHeaders(): HttpHeaders {
+    const token = this.authService.getAuthToken();
+    return new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+  }
+
   // Create Resource
   create(item: any): Observable<User> {
     return this.http.post<User>(`${this.resourcePath()}/Registrar`,
-      JSON.stringify(item), this.httpOptions)
+      JSON.stringify(item),this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 
@@ -70,7 +80,7 @@ export class UserService {
   }
 
   getById(id: any): Observable<User> {
-    return this.http.get<User>(`${this.resourcePath()}/ListarById/${id}`, this.httpOptions)
+    return this.http.get<User>(`${this.resourcePath()}/ListarById/${id}`, { headers: this.getHeaders() })
       .pipe(retry(2), catchError(this.handleError));
   }
 

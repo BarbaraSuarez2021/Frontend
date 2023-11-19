@@ -1,3 +1,7 @@
+body {
+  background-color: #838383;
+
+}
 .class-container {
   background-color: #838383;
   font-family: 'Inter';
@@ -11,6 +15,7 @@
 }
 
 .caja-texto {
+  font-family: Inter;
   background-color: #A9CEC2;
   border-radius: 30px;
   padding: 20px;

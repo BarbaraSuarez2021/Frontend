@@ -1,0 +1,33 @@
+<mat-card>
+    <h2>Editar Usuario</h2>
+
+    <form [formGroup]="usuarioForm" (ngSubmit)="saveChanges()">
+        <mat-form-field>
+            <input matInput formControlName="idU" placeholder="idU">
+          </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="idTipoDonacion" placeholder="idTipoDonacion">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="idRoles" placeholder="idRoles">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="donacionU" placeholder="donacionU">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="contrasena" placeholder="contrasena">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="apellidoU" placeholder="apellidoU">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="nombreU" placeholder="nombreU">
+      </mat-form-field>
+
+      <div class="button-container">
+        <button mat-raised-button color="primary" type="submit">Guardar cambios</button>
+
+      </div>
+    </form>
+  </mat-card>
+

@@ -14,7 +14,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
-
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [],
@@ -35,7 +36,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatDividerModule,
     MatSnackBarModule,
     MatTableModule,
-    MatGridListModule
+    MatGridListModule,
+    MatNativeDateModule,
+    MatDialogModule
 
   ],
 })

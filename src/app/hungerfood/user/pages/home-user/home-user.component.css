@@ -1,0 +1,41 @@
+
+.banner{
+  background-image: url('/assets/img-inicio.jpg');
+  background-position: center top;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.content{
+  position:absolute;
+}
+
+.content h1{
+  color: #ffffff;
+  font-size: 5vw;
+  font-family: 'Jost', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  line-height: 2cm;
+}
+
+.content a{
+  text-decoration: none;
+  background-color: #FFF;
+
+  padding: 15px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.content a:hover{
+  background-color: black;
+  color: white;
+}
+
+
+

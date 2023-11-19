@@ -1,4 +1,4 @@
-import { Login } from './../../model/login/login';
+import { Login } from '../../model/login/login';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, retry, throwError} from "rxjs";
 import {environment} from "../../../../../environments/environment";

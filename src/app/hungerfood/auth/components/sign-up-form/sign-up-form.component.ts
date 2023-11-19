@@ -1,4 +1,4 @@
-import { User } from './../../model/user/user';
+import { User } from '../../model/user/user';
 import { Component, OnInit, ElementRef, Input } from '@angular/core';
 
 import { UserService } from '../../services/user-service/user.service';
@@ -41,8 +41,20 @@ export class SignUpFormComponent implements OnInit {
 
   rol: number = 0;
   typeDonation: number = 0;
+  selectedValue: string = '';
 
   users : User[] = [];
+
+  tiposDonacion = [
+    { idTipoDonacion: 1, nombreTD: 'Donacion de alimentos' },
+    { idTipoDonacion: 2, nombreTD: 'Donacion económica' },
+  ];
+
+  roles = [
+    {idRoles: 1, tipo: 'Administrador'},
+    {idRoles: 2, tipo: 'Usuario'}
+  ];
+
 
   @Input() user: User;
 
@@ -54,8 +66,8 @@ export class SignUpFormComponent implements OnInit {
       donacionU: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(50), Validators.pattern(/^[a-zA-Z0-9]*$/)]),
       contrasena: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/)]),
       confirmPassword: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/)]),
-      idTipoDonacion: new FormControl('', [Validators.required, Validators.minLength(1), Validators.pattern(/^[0-9]*$/)]),
-      idRoles: new FormControl('', [Validators.required, Validators.minLength(1), Validators.pattern(/^[0-9]*$/)]),
+      idTipoDonacion: new FormControl(null, [Validators.required, Validators.minLength(1), Validators.pattern(/^[0-9]*$/)]),
+      idRoles: new FormControl(null, [Validators.required, Validators.minLength(1), Validators.pattern(/^[0-9]*$/)]),
     },
     { validators: passwordsMatchValidator() }
   );
@@ -115,8 +127,8 @@ export class SignUpFormComponent implements OnInit {
 
   submit() {
     if (this.signUpForm.valid) {
-      this.user.idRoles = parseInt(this.signUpForm.value.idRoles!);
-      this.user.idTipoDonacion = parseInt(this.signUpForm.value.idTipoDonacion!);
+      this.user.idRoles = this.signUpForm.value.idRoles!;
+      this.user.idTipoDonacion = this.signUpForm.value.idTipoDonacion!;
 
       console.log(this.user);
       console.log(this.signUpForm.value);

@@ -9,7 +9,7 @@ export class AuthResponse {
   constructor(){
     this.success = false;
     this.message = '';
-    this.user = new User(0, 0, 0, '', '', '', '', '');
+    this.user = {} as User;
     this.token = '';
   }
 }

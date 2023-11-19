@@ -1,0 +1,8 @@
+{
+  "/*": {
+    "target": "https://hungerfood-405018.uc.r.appspot.com",
+    "secure": true,
+    "loglevel": "debug",
+    "changeOrigin": true
+  }
+}

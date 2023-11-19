@@ -1,0 +1,13 @@
+<mat-toolbar color="accent" class="menu-toolbar">
+  <mat-toolbar-row>
+    <img class="hungerimg" src="assets/LogoHunger.png" alt="Logo" width="328" height="76"  >
+    <span class="example-spacer"></span>
+    <a class="nav-link" [routerLink]="'/user/home'">Inicio</a>
+    <a class="nav-link" [routerLink]="'/user/donate-now'">Donaciones</a>
+    <a class="nav-link" [routerLink]="'/user/alliances'">Alianzas</a>
+    <button mat-raised-button [routerLink]="'/home'" (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      Log Out
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
